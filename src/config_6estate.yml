@@ -1,0 +1,22 @@
+dataset:
+  training_path: "/polyaxon-data/workspace/kewen_yang/X-Train/6estate/train.json"
+  test_path: "/polyaxon-data/workspace/kewen_yang/X-Train/6estate/test.json"
+  val_path: "/polyaxon-data/workspace/kewen_yang/X-Train/6estate/dev.json"
+  
+random:
+  seed: 1
+
+datapipe:
+  drop_list: [102, 181, 301, 521, 587, 694, 883, 1186, 1273, 1462, 1682, 2025, 2367, 2578, 3064, 3349, 3579, 3820, 3820, 3822, 3892, 3894, 3896, 4145, 4195, 4260, 4326, 4372, 4377, 4646, 4750, 4796, 4803, 4916, 4931, 5496, 5686, 5973, 6112, 6178, 6245, 6354, 6414, 6449, 6636, 6764, 6944, 7334, 7432, 7498, 7842, 8388]
+
+model:
+  MODEL : "bert-base-uncased"
+  NUM_LABELS : 1
+  BATCH_SIZE : 128
+  LEARNING_RATE : 0.00005
+  LR_PATIENCE: 6
+  ES_PATIENCE: 15
+  FACTOR : 0.9
+  EPOCHS : 100
+  MAX_LENGTH : 512
+  PATH: "/polyaxon-data/workspace/kewen_yang/X-Train/6estate"
